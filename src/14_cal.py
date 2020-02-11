@@ -32,11 +32,29 @@ import calendar
 from datetime import datetime
 import argparse
 
-parser = argparse.ArgumentParser(description='Process some integers.')
-parser.add_argument('--m', type=str, help='Month',
+parser = argparse.ArgumentParser(description='Calendar on your terminal')
+parser.add_argument('-m', type=str, help='Month',
                     default=datetime.now().month)
-parser.add_argument('--y', type=str, help='Year',
+parser.add_argument('-y', type=str, help='Year',
                     default=datetime.now().year)
 
 args = parser.parse_args()
 print(calendar.month(int(args.y), int(args.m)))
+
+
+# argv = sys.argv[1:]
+# print(argv)
+
+# month = int(datetime.now().month)
+# year = int(datetime.now().year)
+
+# if len(argv) > 2:
+#     print("Usage format: 14_cal.py [-h] [-m M] [-y Y]")
+#     exit()
+# elif len(argv) == 2:
+#     month = int(argv[0])
+#     year = int(argv[1])
+# elif len(argv) == 1:
+#     month = int(argv[0])
+
+# print(calendar.month(int(year), int(month)))
